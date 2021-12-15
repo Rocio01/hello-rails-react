@@ -1,24 +1,22 @@
 import React from "react";
 import { connect } from 'react-redux';
 import {createStructuredSelector} from 'reselect';
-
-const GET_GREETINGS_REQUEST = 'GET_GREETINGS_REQUEST';
-
-function getGreetings(){
-  console.log('getGreetings')
-  return {
-    type: GET_GREETINGS_REQUEST
-  }
-}
+import getGreetings from '../greetings';
 
 
 class Greeting extends React.Component {
   render () {
+    // const { greetings } = this.props;
+    // const greet = greetings.map((i)=>{
+    //   return <span> {i.title}</span>
+    // })
+    // console.log(greet)
     return (
       <React.Fragment>
       Greeting: {this.props.greeting}
       <button className="getGreetingsBtn" onClick={()=> this.props.getGreetings()}>getThings</button>
-
+      <br />
+      {/* <div>{greet}</div> */}
       </React.Fragment>
     );
   }
