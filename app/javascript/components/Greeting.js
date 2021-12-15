@@ -6,24 +6,23 @@ import getGreetings from '../greetings';
 
 class Greeting extends React.Component {
   render () {
-    // const { greetings } = this.props;
+    const { greetings } = this.props;
     // const greet = greetings.map((i)=>{
     //   return <span> {i.title}</span>
     // })
-    // console.log(greet)
     return (
       <React.Fragment>
       Greeting: {this.props.greeting}
       <button className="getGreetingsBtn" onClick={()=> this.props.getGreetings()}>getThings</button>
       <br />
-      {/* <div>{greet}</div> */}
+      <div>{greetings}</div>
       </React.Fragment>
     );
   }
 }
 
 const structuredSelector = createStructuredSelector({
-  things: state => state.myGreetings,
+  greetings: state => state.greetings,
 })
 const mapDispatchToProps = {getGreetings};
 export default connect(structuredSelector, mapDispatchToProps)(Greeting);
