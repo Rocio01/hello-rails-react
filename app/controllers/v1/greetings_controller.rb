@@ -1,8 +1,7 @@
 class V1::GreetingsController < ApplicationController
  def index
-  render json: {:greeting => [
-   { :title => 'Hola'}
-  ]}.to_json
+  @greetings = Greeting.order(Arel.sql('RANDOM()')).first
+  render json: @greetings
  end
   
 end
