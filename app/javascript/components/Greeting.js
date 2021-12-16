@@ -7,11 +7,14 @@ const Greeting = () => {
   useEffect(() => {
     dispatch(fetchGreeting());
   }, []);
-  const greetingState = useSelector((state) => state.greetingsReducer.greetings.title);
+  const greetingState = useSelector((state) => state.greetingsReducer.greetings);
   return (
-    
-      <span>Greeting: {greetingState}</span>
-    
+    <div className="card pt-5 mt-5">
+      <div className="card-body text-center">
+        <h1>Greeting: {greetingState.title}</h1>
+        <button className="btn btn-primary" onClick={() => window.location.reload()} > Click me! </button>     
+     </div>
+   </div>
   );
 }
 
