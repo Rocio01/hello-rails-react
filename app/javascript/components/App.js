@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Greeting from './Greeting';
+import Home from "./Home";
 import store from "../redux/configureStore";
 import { Provider } from "react-redux";
 
@@ -11,7 +12,7 @@ class App extends React.Component {
         <Provider store={store}>
          <Router>
         <Routes>
-          <Route path="/" element= { ("Home!") }/>
+          <Route path="/" element= { <Home /> }/>
           <Route path="/greeting" element={ <Greeting /> } />
         </Routes>
       </Router>
