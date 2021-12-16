@@ -4,7 +4,6 @@ import Greeting from './Greeting';
 import Home from "./Home";
 import store from "../redux/configureStore";
 import { Provider } from "react-redux";
-
 class App extends React.Component {
   render () {
     return (
